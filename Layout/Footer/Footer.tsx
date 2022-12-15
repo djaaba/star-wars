@@ -1,7 +1,10 @@
 import { FooterProps } from './Footer.props';
+import Link from 'next/link';
 
 import styled from 'styled-components';
 import { getId } from '../../utils';
+import { ILink } from '../../interfaces';
+import { Heading } from '../../components';
 
 const FooterWrapper = styled.ul`
   padding: 15px;
@@ -9,12 +12,9 @@ const FooterWrapper = styled.ul`
   border-top: 1px solid var(--light-gray);
   display: flex;
   justify-content: space-around;
-`;
 
-interface ILink {
-  resurs: string;
-  address: string;
-}
+  margin-top: 40px;
+`;
 
 const links: Array<ILink> = [
   {resurs: 'vk', address: 'https://vk.com/djaba13'},
@@ -28,11 +28,11 @@ export const Footer = ( {children, ...props}: FooterProps): JSX.Element => {
       <FooterWrapper>
         { links.map(link => 
           <li key={getId()}>
-            <a 
-              href={link.address}
-            >
-              {link.resurs}
-            </a>
+              <a target="_blank" href={link.address}>
+                <Heading tag='h3'>
+                  {link.resurs}
+                </Heading>  
+              </a>
           </li>
         ) }
       </FooterWrapper>

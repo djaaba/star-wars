@@ -12,3 +12,8 @@ export interface ICharacter {
 	skin_color: string;
 	url: string;
 }
+
+export interface ILink {
+	resurs: string;
+	address: string;
+  }

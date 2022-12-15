@@ -9,8 +9,6 @@ const LayoutWrapper = styled.div`
   	padding: 40px;
 `;
 
-
-
 export const Layout = ({children, ...props}: LayoutProps):JSX.Element => {
   return (
 	<>

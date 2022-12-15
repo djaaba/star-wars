@@ -1,7 +1,13 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { HeadingProps } from './Heading.props';
+
+const hoverStyles = css`
+  &:hover{
+    color: var(--light-gray);
+  }
+`;
 
 const TitleH1 = styled.h1`
   font-size: 40px;
@@ -13,9 +19,10 @@ const TitleH2 = styled.h2`
 
 const TitleH3 = styled.h3`
   font-size: 20px;
+  ${hoverStyles}
 `;
 
-export const Heading = ({ children, tag} : HeadingProps): JSX.Element => {
+export const Heading = ({ children, tag, hover } : HeadingProps): JSX.Element => {
 	
 	switch(tag){
 		case 'h1': 

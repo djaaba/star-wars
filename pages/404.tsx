@@ -1,6 +1,8 @@
+import { Heading } from "../components";
+
 const Error = () => {
   return (
-	<div>Error</div>
+	  <Heading tag='h1'>Error! Page not found!</Heading>
   )
 }
 

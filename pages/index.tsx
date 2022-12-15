@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import { CharacterList, CharacterHistory } from "../components";
+import { CharacterList, CharacterHistory, Heading } from "../components";
 import { ICharacter } from "../interfaces";
 
 export const getStaticProps = async () => {
@@ -20,8 +20,24 @@ export const getStaticProps = async () => {
 }
 
 const Wrapper = styled.div`
-  
+  max-width: 1000px;
+  margin-bottom: 50px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+`
+
+const Input = styled.input`
+  padding: 10px 0px 10px 15px;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid orange;
 `;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-around;
+`
 
 const Main = ({characters}: MainProps): JSX.Element => {
   const [value, setValue] = useState<string>('');
@@ -30,7 +46,6 @@ const Main = ({characters}: MainProps): JSX.Element => {
   const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value.toLowerCase())
   
   useEffect(() => {
-    console.log(characters)
     setArray(
       characters.filter(character => {
         return character.name.toLowerCase().includes(value);
@@ -40,11 +55,13 @@ const Main = ({characters}: MainProps): JSX.Element => {
 
   return (
     <>
-    <Wrapper>
-      <input placeholder="Кого вы ищете?" value={value} type="text" onChange={e => changeValue(e)}/> 
-      <CharacterList characters={characters} filtered={array}/>
-      <CharacterHistory characters={characters} />
-    </Wrapper>
+      <Wrapper>
+        <Input placeholder="Кого вы ищете?" value={value} type="text" onChange={e => changeValue(e)}/> 
+      </Wrapper>
+      <Container>
+        <CharacterList characters={characters} filtered={array}/>
+        <CharacterHistory characters={characters} />
+      </Container>
     </>
   );
 };

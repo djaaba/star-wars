@@ -11,8 +11,17 @@ const GlobalStyle = createGlobalStyle`
   ${reset}
   body{
     font-family: "Roboto";
-    background: url('https://i.pinimg.com/564x/4a/a9/9b/4aa99b6ad2d2cbc7cb04a41571885a8f.jpg')
+    background: url('https://i.pinimg.com/564x/4a/a9/9b/4aa99b6ad2d2cbc7cb04a41571885a8f.jpg');
+    color: var(--white);
   }
+
+  a:active,
+  a:hover,
+  a {
+    text-decoration: none;
+    color: var(--white);
+  }
+  
   :root{
     --white: #fff;
     --light-gray: #D3D3D3;
@@ -28,7 +37,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Head>
         <title>Nebo-Team</title>
         <link rel="icon" href="/nebo.ico" />
-        <meta property='og:locale' content='ru_RU'/>
       </Head>
       <Layout>
         <Component {...pageProps} />
