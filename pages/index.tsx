@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import { CharacterList, CharacterHistory, Heading } from "../components";
+import { CharacterList, CharacterHistory } from "../components";
 import { ICharacter } from "../interfaces";
 
 export const getStaticProps = async () => {
   const response = await fetch('https://swapi.dev/api/people');
-  const data: Array<ICharacter> = await response.json();
+  const data = await response.json();
   
   if(!data){
     return {
@@ -39,6 +39,10 @@ const Container = styled.div`
   justify-content: space-around;
 `
 
+interface MainProps{
+  characters: Array<ICharacter>
+}
+
 const Main = ({characters}: MainProps): JSX.Element => {
   const [value, setValue] = useState<string>('');
   const [array, setArray] = useState<Array<ICharacter>>([]);
@@ -56,18 +60,14 @@ const Main = ({characters}: MainProps): JSX.Element => {
   return (
     <>
       <Wrapper>
-        <Input placeholder="Кого вы ищете?" value={value} type="text" onChange={e => changeValue(e)}/> 
+        <Input placeholder="Я ищу..." value={value} type="text" onChange={e => changeValue(e)}/> 
       </Wrapper>
       <Container>
-        <CharacterList characters={characters} filtered={array}/>
-        <CharacterHistory characters={characters} />
+          <CharacterList characters={characters} filtered={array}/>
+          <CharacterHistory characters={characters} />
       </Container>
     </>
   );
 };
-
-interface MainProps{
-  characters: Array<ICharacter>
-}
 
 export default Main;

@@ -22,7 +22,6 @@ export const CharacterInfo = ({ character, ...props } : CharacterInfoProps): JSX
 
 	useEffect(() => {
 		sessionStorage.setItem(name, name);
-		console.log(sessionStorage);
 	}, [])
 
 	return (

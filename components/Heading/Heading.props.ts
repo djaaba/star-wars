@@ -1,4 +1,4 @@
-import { ReactNode, DetailedHTMLProps, HTMLAttributes } from "react";
+import { ReactNode } from "react";
 
 export interface HeadingProps {
 	tag: 'h1' | 'h2' | 'h3';

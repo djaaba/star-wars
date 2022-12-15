@@ -1,8 +1,32 @@
-import React from 'react'
+import React from 'react';
 
-const Characters = () => {
+import { ICharacter } from '../../interfaces';
+import { CharacterList } from '../../components';
+
+export const getStaticProps = async () => {
+	const response = await fetch('https://swapi.dev/api/people');
+	const data = await response.json();
+	
+	if(!data){
+	  return {
+		notFound: true,
+	  }
+	}
+  
+	return {
+	  props: { characters: data.results }
+	}
+}
+
+interface MainProps{
+	characters: Array<ICharacter>
+}
+
+const Characters = ({characters}: MainProps) => {
   return (
-	  <div>Characters</div>
+	  <>
+          <CharacterList characters={characters} filtered={characters}/>
+	  </>
   )
 }
 
