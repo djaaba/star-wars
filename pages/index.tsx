@@ -37,6 +37,10 @@ const Input = styled.input`
 const Container = styled.div`
   display: flex;
   justify-content: space-around;
+  gap: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 interface MainProps{
