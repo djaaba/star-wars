@@ -28,7 +28,7 @@ export const CharacterList = ({ characters, filtered, ...props} : CharacterListP
 				{ filtered.map(({name}, id) => 
 					<LiElem key={getId()}>
 						<Link href={`/characters/${findByName(characters, name)}`}>
-							<Heading tag='h3'>{name}: </Heading>
+							<Heading tag='h3'>{name} </Heading>
 						</Link>
 					</LiElem>
 				)}
