@@ -13,7 +13,7 @@ const HeaderWrapper = styled.div`
 export const Header = ( {children, ...props}: HeaderProps): JSX.Element => {
   return (
     <>
-      <HeaderWrapper {...props}>
+      <HeaderWrapper>
         <Link href='/'>
           <Image
             src="/star-wars.png"

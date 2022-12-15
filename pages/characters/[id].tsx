@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { ReactNode, DetailedHTMLProps, HTMLAttributes } from "react";
+
 import { CharacterInfo } from '../../components';
-import { CharacterProps } from './Character.props'
 import { GetServerSideProps } from 'next'
 import { ICharacter } from '../../interfaces';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { id } = context.params;
+  const id = context.params;
   const response = await fetch(`https://swapi.dev/api/people/${id}`);
   const data: ICharacter = await response.json();
 
@@ -26,6 +26,11 @@ const Character = ( {children, character, ...props}: CharacterProps): JSX.Elemen
       <CharacterInfo character={character}/>
     </>
   )
+}
+
+export interface CharacterProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+	children: ReactNode;
+	character: ICharacter;
 }
 
 export default Character;

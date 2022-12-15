@@ -1,5 +1,4 @@
 import { FooterProps } from './Footer.props';
-import Link from 'next/link';
 
 import styled from 'styled-components';
 import { getId } from '../../utils';
