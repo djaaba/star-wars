@@ -5,7 +5,7 @@ import { GetServerSideProps } from 'next'
 import { ICharacter } from '../../interfaces';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const id = context.params;
+  const id = context.params!.id;
   const response = await fetch(`https://swapi.dev/api/people/${id}`);
   const data: ICharacter = await response.json();
 

@@ -26,18 +26,20 @@ export const CharacterHistory = ({ characters, ...props }: CharacterHistoryProps
 	
 	return (
 	<>
-		<Wrapper>
-			{ storage.length > 0 && <Heading tag='h2'>Вы недавно смотрели: </Heading> }
-			<ul>
-			{storage.map(name => 
-				<LiElem key={getId()}>
-					<Link href={`/characters/${findByName(characters, name)}`}>
-						<Heading tag='h3'>{name}: </Heading>
-					</Link>
-				</LiElem>
-			)}
-			</ul>
-		</Wrapper>
+		{ storage.length > 0 &&
+			<Wrapper>
+				{ <Heading tag='h2'>Вы недавно смотрели: </Heading> }
+				<ul>
+				{ storage.map(name => 
+					<LiElem key={getId()}>
+						<Link href={`/characters/${findByName(characters, name)}`}>
+							<Heading tag='h3'>{name}: </Heading>
+						</Link>
+					</LiElem>
+				)}
+				</ul>
+			</Wrapper>
+		}
 	</>
   )
 }
