@@ -1,4 +1,4 @@
-# Star Wars List – список персонажей из киновселенной Star Wars
+# [Star Wars List](https://star-wars-orcin-xi.vercel.app/) – список персонажей из киновселенной Star Wars
 
 **Задание:**
 Необходимо создать приложение которое использует api https://swapi.dev/.
@@ -8,9 +8,10 @@
  - Главная
  - Страница персонажа
  - 404
-Необходимо использовать хуки и контекст. Typescript обязателен, NextJs приветствуется. 
-Всё остальное на своё усмотрение.
-Срок - 1неделя
+ - Необходимо использовать хуки и контекст
+ - Typescript обязателен, NextJs приветствуется
+ - Всё остальное на своё усмотрение
+ - Срок - 1неделя
 
 ## Быстрый старт
 
@@ -28,11 +29,9 @@
 
 - [next](https://github.com/vercel/next.js/)
 
-- [react-error-boundary](https://github.com/bvaughn/react-error-boundary)
-
 - [styled-components](https://github.com/styled-components/styled-components)
 
--[styled-reset](https://github.com/zacanger/styled-reset)
+- [styled-reset](https://github.com/zacanger/styled-reset)
 
 ### Структура проекта
 
@@ -54,6 +53,6 @@
 ├── .gitignore                       # Список исключённых файлов из Git
 ├── package.json                     # Список модулей и прочей информации
 ├── README.md                        # Документация шаблона
-├── tsconfig.json                    # Параметры компилятора TypeScript
+└── tsconfig.json                    # Параметры компилятора TypeScript
 
 ```
