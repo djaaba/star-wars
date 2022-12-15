@@ -33,7 +33,7 @@ export const CharacterHistory = ({ characters, ...props }: CharacterHistoryProps
 				{ storage.map(name => 
 					<LiElem key={getId()}>
 						<Link href={`/characters/${findByName(characters, name)}`}>
-							<Heading tag='h3'>{name}: </Heading>
+							<Heading tag='h3'>{name} </Heading>
 						</Link>
 					</LiElem>
 				)}
